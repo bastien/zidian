@@ -5,9 +5,10 @@ module Zidian
     case expression.class.name
     when "Integer", "Fixnum" then
       line = `sed -n '#{expression}p' lib/cedict_ts.u8`
-      extract(line)
+      extract(line, expression)
     when "String" then
-      lines = `less lib/cedict_ts.u8 | grep -n #{expression}`
+      lines = `less lib/cedict_ts.u8 | grep -n '[/\s]#{expression.gsub(/\s/,"\s")}[/\s]'` 
+      # adding the -i option allows to search independently from the case, but it makes it very slow
       lines.lines.to_a.collect{|line| extract(line) }
     else
       raise "Invalid find parameter(#{expression.class}). Only integers, strings accepted"
