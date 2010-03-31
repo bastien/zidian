@@ -18,11 +18,11 @@ module Zidian
   
   def self.find_word(word) #:nodoc:
     # adding the -i option allows to search independently from the case, but it makes it very slow
-    `less lib/cedict_ts.u8 | grep -n '[/\s]#{word.gsub(/\s/,"\s")}[/\s]'`
+    `less #{File.dirname(__FILE__)}/cedict_ts.u8 | grep -n '[/\s]#{word.gsub(/\s/,"\s")}[/\s]'`
   end
   
   def self.get_line(line_number) #:nodoc:
-    `sed -n '#{line_number}p' lib/cedict_ts.u8`
+    `sed -n '#{line_number}p' #{File.dirname(__FILE__)}/cedict_ts.u8`
   end
   
   class Word
