@@ -1,0 +1,20 @@
+Zidian
+======
+
+Zidian is a simple Chinese-English dictionary written in ruby.
+It only works under Unix systems, as it uses specific commands (sed, grep, less), at least for now.
+
+Examples of use
+--------------
+ 
+    Zidian.find(237) # returns the Word from the 237 id (line number in the file)
+
+    Zidian.find("culture") # returns all the words that contain "culture"
+
+    Zidian.find("文") # returns all the words that contain "文"
+
+    Zidian.find([653,34]) # returns the 2 words corresponding to the given ids
+ 
+Author:   Bastien Vaucher
+Version:  0.0.1
+Licence:  MIT
