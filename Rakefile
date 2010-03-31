@@ -2,8 +2,8 @@ require 'rubygems'
 require 'rake'  
 require 'echoe'  
   
-Echoe.new('zidian', '0.0.1') do |p|  
-  p.description     = "Chinese dictionnary"  
+Echoe.new('zidian', '0.0.1') do |p|
+  p.description     = "Chinese dictionary"
   p.url             = "http://github.com/bastien/zidian"  
   p.author          = "Bastien Vaucher"  
   p.email           = "bastien.vaucher@gmail.com"  
