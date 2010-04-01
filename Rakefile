@@ -1,14 +1,19 @@
 require 'rubygems'  
 require 'rake'  
-require 'echoe'  
   
-Echoe.new('zidian', '0.0.1') do |p|
-  p.description     = "Chinese dictionary"
-  p.url             = "http://github.com/bastien/zidian"  
-  p.author          = "Bastien Vaucher"  
-  p.email           = "bastien.vaucher@gmail.com"  
-  p.ignore_pattern  = ["tmp/*", "script/*"]  
-  p.development_dependencies = []  
+begin  
+  require 'jeweler'  
+  Jeweler::Tasks.new do |gemspec|  
+    gemspec.name = "zidian"  
+    gemspec.summary = "Chinese dictionary"  
+    gemspec.description = "Chinese dictionary using the CEDICT word list"  
+    gemspec.email = "bastien.vaucher@gmail.com"  
+    gemspec.homepage = "http://github.com/bastien/zidian"  
+    gemspec.authors = ["Bastien Vaucher"]  
+  end 
+  Jeweler::GemcutterTasks.new
+rescue LoadError  
+  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"  
 end  
   
 Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
