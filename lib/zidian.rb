@@ -10,7 +10,7 @@ module Zidian
     when "String" then
       find_word(expression).lines.to_a.collect{|line| Word.new(line) }
     else
-      raise "Invalid find parameter(#{expression.class}). Only integers, strings accepted"
+      raise InvalFindInputException
     end
   end
   
@@ -22,6 +22,7 @@ module Zidian
   end
   
   def self.get_line(line_number) #:nodoc:
+    raise InvalidIdException if (line_number < 35 || line_number > 86617)
     `sed -n '#{line_number}p' #{File.dirname(__FILE__)}/cedict_ts.u8`
   end
   
@@ -44,6 +45,18 @@ module Zidian
       @english = line.scan(/\/[^\/]+/).collect{|e| e.gsub(/[\/]/,'')}
     end
     
+  end
+  
+  class InvalidIdException < Exception; 
+    def message
+      "Invalid ID, must be between 35 and 86617"
+    end
+  end
+  
+  class InvalFindInputException < Exception; 
+    def message
+      "Invalid find parameter. Only integers, strings accepted"
+    end
   end
   
 end
