@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
      "doc/rdoc-style.css",
      "lib/cedict_ts.u8",
      "lib/zidian.rb",
-     "pkg/zidian-0.0.1.gem",
      "test/test_zidian.rb",
      "zidian.gemspec"
   ]
