@@ -4,6 +4,11 @@ Zidian
 Zidian is a simple Chinese-English dictionary written in ruby.
 It only works under Unix systems, as it uses specific commands (sed, grep, less), at least for now.
 
+Install
+---------
+
+    gem install zidian
+
 Examples of use
 --------------
  
