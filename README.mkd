@@ -21,5 +21,5 @@ Examples of use
     Zidian.find([653,34]) # returns the 2 words corresponding to the given ids
  
 Author:   Bastien Vaucher
-Version:  0.1.0
+Version:  0.1.1
 Licence:  MIT
