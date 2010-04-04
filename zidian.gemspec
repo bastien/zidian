@@ -9,14 +9,15 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bastien Vaucher"]
-  s.date = %q{2010-04-01}
+  s.date = %q{2010-04-04}
   s.description = %q{Chinese dictionary using the CEDICT word list}
   s.email = %q{bastien.vaucher@gmail.com}
   s.extra_rdoc_files = [
     "README.mkd"
   ]
   s.files = [
-    "Manifest",
+    ".gitignore",
+     "Manifest",
      "README.mkd",
      "Rakefile",
      "VERSION",
