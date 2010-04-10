@@ -19,6 +19,10 @@ Examples of use
     Zidian.find("文") # returns all the words that contain "文"
 
     Zidian.find([653,34]) # returns the 2 words corresponding to the given ids
+    
+    Zidian.find("wei2 cheng2") # returns the words corresponding to the given pinyin with tones
+    
+    Zidian.find("wei cheng") # returns the words corresponding to the given pinyin without tones
  
 Author:   Bastien Vaucher
 Version:  0.1.1

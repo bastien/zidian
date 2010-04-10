@@ -29,6 +29,16 @@ class TestZidian < Test::Unit::TestCase
     assert_equal("guai3", words.last.pinyin)
   end
   
+  def test_find_word_from_pinyin
+    words = Zidian.find("wei cheng")
+    assert_equal("围城", words.first.simplified)
+  end
+  
+  def test_find_word_from_pinyin_marked
+    words = Zidian.find("wei2 cheng2")
+    assert_equal("siege", words.first.english.first)
+  end
+  
   def test_raise_when_invalid_input_type
     assert_raise(Zidian::InvalFindInputException) do
       Zidian.find(:shanghai)

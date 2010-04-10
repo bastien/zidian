@@ -17,8 +17,9 @@ module Zidian
   protected
   
   def self.find_word(word) #:nodoc:
+    words = word.split.map{|w| "#{w}[1-4]?"}.join(" ")
     # adding the -i option allows to search independently from the case, but it makes it very slow
-    `less #{File.dirname(__FILE__)}/cedict_ts.u8 | grep -n '[/\s]#{word.gsub(/\s/,"\s")}[/\s]'`
+    `less #{File.dirname(__FILE__)}/cedict_ts.u8 | grep -n -E '(^|[^a-zA-Z])#{words}($|[^a-zA-Z])'`
   end
   
   def self.get_line(line_number) #:nodoc:
