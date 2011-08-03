@@ -1,5 +1,5 @@
-require "#{File.dirname(__FILE__)}/../lib/zidian"
-require "test/unit"
+# encoding: utf-8
+require "helper"
 
 class TestZidian < Test::Unit::TestCase
 
@@ -32,6 +32,11 @@ class TestZidian < Test::Unit::TestCase
   def test_find_word_from_pinyin
     words = Zidian.find("wei cheng")
     assert_equal("围城", words.first.simplified)
+  end
+  
+  def test_find_word_from_chinese
+    words = Zidian.find("围城")
+    assert_equal("wei2 cheng2", words.first.pinyin)
   end
   
   def test_find_word_from_pinyin_marked
